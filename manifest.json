@@ -1,0 +1,17 @@
+{
+	"manifest_version": 3,
+	"name": "Up Proceset button",
+	"description": "This extention can help you be in up part of page whatever you want!",
+	"version": "1.0.0",
+	"content_scripts": [
+		{
+		  "matches": ["<all_urls>"],
+		  "js": ["content_script.js"],
+		  "css": ["styles.css"]
+		}
+	],
+	"permissions": [
+		"tabs",
+		"activeTab"
+	]
+}

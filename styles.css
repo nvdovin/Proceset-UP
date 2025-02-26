@@ -1,0 +1,15 @@
+.up_button_div {
+	display: fixed; 
+	position: absolute;
+	color: black; 
+	bottom: 50px; 
+	left: 10px; 
+	z-index: 200;
+	border: black 1px solid;
+	border-radius: 3px
+}
+
+.up_button_a {
+	color: black; 
+	z-index: 200
+}
