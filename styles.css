@@ -1,6 +1,6 @@
 .up_button_div {
-	display: fixed; 
-	position: absolute;
+	display: block;
+	position: fixed; 
 	color: black; 
 	bottom: 50px; 
 	left: 10px; 
