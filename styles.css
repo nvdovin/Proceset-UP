@@ -1,15 +1,23 @@
 .up_button_div {
-	display: block;
-	position: fixed; 
+	display: fixed; 
+	position: absolute;
 	color: black; 
-	bottom: 50px; 
+	bottom: -10px; 
 	left: 10px; 
 	z-index: 200;
-	border: black 1px solid;
-	border-radius: 3px
+	width: 40 !important;
+	height: 40 !important;
 }
 
 .up_button_a {
 	color: black; 
-	z-index: 200
+	z-index: 200;
+	width: 40 !important;
+	height: 40 !important;
+}
+
+.img_class {
+	width: 40 !important;
+	height: 40 !important;
+	/* z-index: 200; */
 }

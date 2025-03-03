@@ -1,34 +1,89 @@
-function get_hat() {
-	let hat = document.querySelector("div[data-id='main']");
-	if (!hat) {
-		setTimeout(
-			get_hat,
-			3000
+let url = String(document.URL);
+const timeOut = 1000;
+
+// Create a anchor 
+function create_an_anchor() {
+	// Creating of anchor in top part of page
+
+	let hat = document.getElementsByTagName("main")[0];
+	let hats_first_child = hat.firstChild;
+	let new_anchor = document.createElement("div");
+	new_anchor.setAttribute("id", "new_anchor");
+	hats_first_child.appendChild(new_anchor);
+	console.log("[log] I've been set the anchor");
+
+	// Create a button
+	let bottom_part = document.getElementById("root");	
+	let first_child = bottom_part.firstChild;
+	let up_button_div = document.createElement("div");
+	up_button_div.setAttribute("class", "up_button_div");
+
+	let img = document.createElement("img");
+	img.setAttribute("src", "https://github.com/nvdovin/JavaScript-Tetris/blob/main/image.png?raw=true");
+	img.setAttribute("class", "img_class");
+	img.setAttribute("style", "width: 150px; heigth: 150px");
+	
+	let up_button_a = document.createElement("a");
+	up_button_a.href = "#new_anchor";
+	up_button_a.setAttribute("class", "up_button_a");
+	up_button_a.textContent = "";
+	up_button_a.appendChild(img);
+	
+	bottom_part.insertBefore(up_button_div, first_child);
+	up_button_div.appendChild(up_button_a);
+
+	console.log("[log] Anchor set");
+};
+
+
+function run_changer() {
+	if (
+		(
+			url.includes("infomaximum") ||
+			url.includes("proceset")
+		) && 
+			url.includes("publish")
+		) {
+		setTimeout(() => {
+			console.log("[log] Waited");
+			create_an_anchor();
+		}, timeOut);
+		
+	} else {
+		clear_up_button();
+	};
+};
+
+
+function clear_up_button() {
+	let up_button_div = document.querySelector("div[class='up_button_div']");
+	up_button_div.parentNode.removeChild(up_button_div);	// Here we remove the UP button
+};
+
+function is_URL_changed() {
+	let current_url = String(document.URL);
+	if (current_url === url) {
+		setTimeout(() => {
+			console.log("[log] URL isn't change yet");
+			is_URL_changed()
+		},
+		timeOut
 		);
 	} else {
-		console.log("[log] Probably, page is loaded at all");
+		url = current_url;
 
-		// Create an anchor in a top part of page
-		let first_child = hat.firstChild;
+		setTimeout(() => {
+			console.log("[log] URL was changed");
+		run_changer();
+		},
+		timeOut);
 
-		let anchor_div = document.createElement("div");
-		anchor_div.setAttribute("id", "anchor-up");
-
-		hat.insertBefore(anchor_div, first_child);
-		console.log("[log] Anchor was set");
-
-		// Create a button fixed in bottom part of page
-		let button_up_div = document.createElement("div");
-		button_up_div.setAttribute("class", "up_button_div");
-
-		let button_up_a = document.createElement("a");
-		button_up_a.setAttribute("class", "up_button_a");
-		button_up_a.setAttribute("href", "#anchor-up");
-		button_up_a.textContent = "↑↑↑";
-
-		button_up_div.appendChild(button_up_a);
-		hat.appendChild(button_up_div);
+		setTimeout(() => {
+			is_URL_changed();
+		},
+			timeOut
+		);
 	};
-}
+};
 
-let hat = get_hat();
+is_URL_changed();
