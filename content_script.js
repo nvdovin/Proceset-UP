@@ -19,7 +19,7 @@ function create_an_anchor() {
 	up_button_div.setAttribute("class", "up_button_div");
 
 	let img = document.createElement("img");
-	img.setAttribute("src", "https://github.com/nvdovin/publisher/blob/empty_branch/array.png?raw=true");
+	img.setAttribute("src", "https://github.com/nvdovin/JavaScript-Tetris/blob/main/array_white.png?raw=true");
 	img.setAttribute("class", "img_class");
 	img.setAttribute("style", "width: 40px; heigth: 40px");
 	
