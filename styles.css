@@ -19,5 +19,5 @@
 .img_class {
 	width: 40 !important;
 	height: 40 !important;
-	/* z-index: 200; */
+	opacity: 0.20;
 }

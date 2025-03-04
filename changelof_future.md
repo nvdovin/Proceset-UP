@@ -1,4 +1,2 @@
 **Done**:
-- Changed general tag which we are use to find all
-- It works with all the reports
-- Added picture instead of button
+- The button clearing every time where it isn't true in if expression

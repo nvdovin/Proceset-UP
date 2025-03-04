@@ -10,7 +10,7 @@ function create_an_anchor() {
 	let new_anchor = document.createElement("div");
 	new_anchor.setAttribute("id", "new_anchor");
 	hats_first_child.appendChild(new_anchor);
-	console.log("[log] I've been set the anchor");
+	// console.log("[log] I've been set the anchor");
 
 	// Create a button
 	let bottom_part = document.getElementById("root");	
@@ -19,9 +19,9 @@ function create_an_anchor() {
 	up_button_div.setAttribute("class", "up_button_div");
 
 	let img = document.createElement("img");
-	img.setAttribute("src", "https://github.com/nvdovin/JavaScript-Tetris/blob/main/image.png?raw=true");
+	img.setAttribute("src", "https://github.com/nvdovin/publisher/blob/empty_branch/array.png?raw=true");
 	img.setAttribute("class", "img_class");
-	img.setAttribute("style", "width: 150px; heigth: 150px");
+	img.setAttribute("style", "width: 40px; heigth: 40px");
 	
 	let up_button_a = document.createElement("a");
 	up_button_a.href = "#new_anchor";
@@ -32,7 +32,7 @@ function create_an_anchor() {
 	bottom_part.insertBefore(up_button_div, first_child);
 	up_button_div.appendChild(up_button_a);
 
-	console.log("[log] Anchor set");
+	// console.log("[log] Anchor set");
 };
 
 
@@ -45,7 +45,7 @@ function run_changer() {
 			url.includes("publish")
 		) {
 		setTimeout(() => {
-			console.log("[log] Waited");
+			// console.log("[log] Waited");
 			create_an_anchor();
 		}, timeOut);
 		
@@ -56,15 +56,17 @@ function run_changer() {
 
 
 function clear_up_button() {
+	console.log("[log] Trying to delete the button!");
 	let up_button_div = document.querySelector("div[class='up_button_div']");
-	up_button_div.parentNode.removeChild(up_button_div);	// Here we remove the UP button
+	let up_button_a = up_button_div.firstChild;
+	up_button_div.removeChild(up_button_a);
 };
 
 function is_URL_changed() {
 	let current_url = String(document.URL);
 	if (current_url === url) {
 		setTimeout(() => {
-			console.log("[log] URL isn't change yet");
+			// console.log("[log] URL isn't change yet");
 			is_URL_changed()
 		},
 		timeOut
