@@ -59,7 +59,18 @@ function clear_up_button() {
 	console.log("[log] Trying to delete the button!");
 	let up_button_div = document.querySelector("div[class='up_button_div']");
 	let up_button_a = up_button_div.firstChild;
+	let img = up_button_a.firstChild;
+	let root = up_button_div.parentElement;
+
+	up_button_a.removeChild(img);
 	up_button_div.removeChild(up_button_a);
+	root.removeChild(up_button_div);
+
+	if (up_button_div) {
+		clear_up_button()
+	} else {
+		return;
+	};
 };
 
 function is_URL_changed() {
