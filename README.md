@@ -9,4 +9,4 @@
 
 ### Фидбек и баги
 - telegram: `@vdovin_na`;
-- Outlook: `n.vdovin@infomaximum.com`
+- почта: `vdovinna@yandex.ru`.
